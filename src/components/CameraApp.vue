@@ -15,11 +15,9 @@ export default defineComponent({
         // Use camera reference to call functions
         const snapshot = async () => {
             const blob = await camera.value?.snapshot();
-
             // To show the screenshot with an image tag, create a url
-            const url = URL.createObjectURL(blob);
+            const url = URL.createObjectURL(blob as Blob);
             console.log(url);
-            
         }
 
         return {
